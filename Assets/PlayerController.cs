@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DropState{ Water, Vapor, Ice };
+
 public class PlayerController : MonoBehaviour
 {
 
-    enum DropState{ Water, Vapor, Ice };
-    DropState currentState = DropState.Water;
+    
+    public DropState currentState = DropState.Water;
     private Rigidbody rb;
 
     public bool bOnGround;
@@ -118,7 +120,7 @@ public class PlayerController : MonoBehaviour
         
     }
     
-    private void ChangeState(DropState state)
+    public void ChangeState(DropState state)
     {
         switch(state)
         {
